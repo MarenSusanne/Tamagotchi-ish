@@ -13,59 +13,58 @@
             Console.WriteLine("Cute! Now you must name them!");
             var petName = Console.ReadLine();
             Animals myPet = new($"{petName}", $"{petColor}");
-            Console.WriteLine("That is perfect! " + myPet.name + " the " + myPet.color + " " + pet);
+            Console.WriteLine("That is perfect! " + myPet.Name + " the " + myPet.Color + " " + pet);
             while (true)
             {
                 StartGame();
             }
             
-            return;
 
             void StartGame()
             {
-                Console.WriteLine("What would you like to do with " + myPet.name + "?");
+                Console.WriteLine("What would you like to do with " + myPet.Name + "?");
                 Console.WriteLine("1. Feed\n2. Play\n3. Brush\n4. Pet");
                 var activity = Convert.ToInt32(Console.ReadLine());
                 switch (activity)
                 {
-                    case 1 when myPet.hunger == 0:
-                        Console.WriteLine(myPet.name + " is not hungry");
-                        myPet.energy = myPet.energy >= 80 ? myPet.energy = 100 : myPet.energy += 20;
-                        myPet.filth = myPet.filth >= 90 ? myPet.filth = 100 : myPet.filth += 10;
+                    case 1 when myPet.Hunger == 0:
+                        Console.WriteLine(myPet.Name + " is not hungry");
+                        myPet.Energy = myPet.Energy >= 80 ? myPet.Energy = 100 : myPet.Energy += 20;
+                        myPet.Filth = myPet.Filth >= 90 ? myPet.Filth = 100 : myPet.Filth += 10;
                         break;
-                    case 1 when myPet.hunger > 0:
+                    case 1 when myPet.Hunger > 0:
                         Console.WriteLine();
-                        myPet.hunger = myPet.hunger <= 20 ? myPet.hunger = 0 : myPet.hunger -= 20;
-                        myPet.energy = myPet.energy >= 80 ? myPet.energy = 100 : myPet.energy += 20;
-                        myPet.filth = myPet.filth >= 90 ? myPet.filth = 100 : myPet.filth += 10;
+                        myPet.Hunger = myPet.Hunger <= 20 ? myPet.Hunger = 0 : myPet.Hunger -= 20;
+                        myPet.Energy = myPet.Energy >= 80 ? myPet.Energy = 100 : myPet.Energy += 20;
+                        myPet.Filth = myPet.Filth >= 90 ? myPet.Filth = 100 : myPet.Filth += 10;
                         break;
-                    case 2 when myPet.energy == 0:
-                        Console.WriteLine(myPet.name + " is too tired to play");
-                        myPet.hunger = myPet.hunger >= 80 ? myPet.hunger = 100 : myPet.hunger += 20;
-                        myPet.filth = myPet.filth >= 80 ? myPet.filth = 100 : myPet.filth += 20;
+                    case 2 when myPet.Energy == 0:
+                        Console.WriteLine(myPet.Name + " is too tired to play");
+                        myPet.Hunger = myPet.Hunger >= 80 ? myPet.Hunger = 100 : myPet.Hunger += 20;
+                        myPet.Filth = myPet.Filth >= 80 ? myPet.Filth = 100 : myPet.Filth += 20;
                         break;
-                    case 2 when myPet.energy > 0:
+                    case 2 when myPet.Energy > 0:
                         Console.WriteLine();
-                        myPet.hunger = myPet.hunger >= 80 ? myPet.hunger = 100 : myPet.hunger += 20;
-                        myPet.energy = myPet.energy <= 20 ? myPet.energy = 0 : myPet.energy -= 20;
-                        myPet.filth = myPet.filth >= 80 ? myPet.filth = 100 : myPet.filth += 20;
+                        myPet.Hunger = myPet.Hunger >= 80 ? myPet.Hunger = 100 : myPet.Hunger += 20;
+                        myPet.Energy = myPet.Energy <= 20 ? myPet.Energy = 0 : myPet.Energy -= 20;
+                        myPet.Filth = myPet.Filth >= 80 ? myPet.Filth = 100 : myPet.Filth += 20;
                         break;
-                    case 3 when myPet.filth == 0:
-                        Console.WriteLine(myPet.name + " is already clean");
-                        myPet.hunger = myPet.hunger >= 90 ? myPet.hunger = 100 : myPet.hunger += 10;
-                        myPet.energy = myPet.energy >= 90 ? myPet.energy = 100 : myPet.energy += 10;
+                    case 3 when myPet.Filth == 0:
+                        Console.WriteLine(myPet.Name + " is already clean");
+                        myPet.Hunger = myPet.Hunger >= 90 ? myPet.Hunger = 100 : myPet.Hunger += 10;
+                        myPet.Energy = myPet.Energy >= 90 ? myPet.Energy = 100 : myPet.Energy += 10;
                         break;
-                    case 3 when myPet.filth > 0:
+                    case 3 when myPet.Filth > 0:
                         Console.WriteLine();
-                        myPet.hunger = myPet.hunger >= 90 ? myPet.hunger = 100 : myPet.hunger += 10;
-                        myPet.energy = myPet.energy >= 90 ? myPet.energy = 100 : myPet.energy += 10;
-                        myPet.filth = myPet.filth <= 20 ? myPet.filth = 0 : myPet.filth -= 20;
+                        myPet.Hunger = myPet.Hunger >= 90 ? myPet.Hunger = 100 : myPet.Hunger += 10;
+                        myPet.Energy = myPet.Energy >= 90 ? myPet.Energy = 100 : myPet.Energy += 10;
+                        myPet.Filth = myPet.Filth <= 20 ? myPet.Filth = 0 : myPet.Filth -= 20;
                         break;
                     case 4:
                         Console.WriteLine();
-                        myPet.hunger = myPet.hunger >= 90 ? myPet.hunger = 100 : myPet.hunger += 10;
-                        myPet.energy = myPet.energy >= 90 ? myPet.energy = 100 : myPet.energy += 10;
-                        myPet.filth = myPet.filth >= 90 ? myPet.filth = 100 : myPet.filth += 10;
+                        myPet.Hunger = myPet.Hunger >= 90 ? myPet.Hunger = 100 : myPet.Hunger += 10;
+                        myPet.Energy = myPet.Energy >= 90 ? myPet.Energy = 100 : myPet.Energy += 10;
+                        myPet.Filth = myPet.Filth >= 90 ? myPet.Filth = 100 : myPet.Filth += 10;
                         break;
 
                 }

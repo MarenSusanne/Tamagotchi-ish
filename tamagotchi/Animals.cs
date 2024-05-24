@@ -1,19 +1,12 @@
 ﻿namespace tamagotchi
 {
-    internal class Animals
+    internal class Animals(string name, string color)
     {
-        public int hunger = 10;
-        public int filth = 10;
-        public int energy = 90;
+        public int Hunger = 10;
+        public int Filth = 10;
+        public int Energy = 90;
 
-        public string name;
-        public string color;
-
-        public Animals(string Name, string Color)
-        {
-            name = Name;
-            color = Color;
-        }
-
+        public string Name = name;
+        public string Color = color;
     }
 }
